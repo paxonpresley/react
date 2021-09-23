@@ -11,10 +11,25 @@ import ReactDom from "react-dom";
 //     return React.createElement('h1', {}, 'yo what' );
 // };
 
-function Greeting() {
-    return <div>
-        <h1>This is like how the fuck</h1>
+//! idk
+// function Greeting() {
+//     return <div>
+//         <h1>This is like how the fuck</h1>
+//     </div>
+// }
+
+function Greeting () {
+    return (
+    <div>
+        <Person />
+        <Message />
     </div>
+    );
+}
+
+const Person = () => <h2>Ben Dover</h2>;
+const Message = () => {
+    return <p>hello would you bend the fuck over</p>
 }
 
 ReactDom.render(<Greeting />, document.getElementById("root"));

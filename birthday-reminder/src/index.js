@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDom from "react-dom";
+// CSS here:
+import './index.css'
 
 // ! stateless function
 // function Greeting() {
@@ -18,18 +20,29 @@ import ReactDom from "react-dom";
 //     </div>
 // }
 
-function Greeting () {
+function BookList () {
     return (
-    <div>
-        <Person />
-        <Message />
-    </div>
+    <section className="booklist">
+        <Book />
+        <Book />
+        <Book />
+        <Book />
+        <Book />
+    </section>
     );
 }
 
-const Person = () => <h2>Ben Dover</h2>;
-const Message = () => {
-    return <p>hello would you bend the fuck over</p>
+function Book () {
+    return <article className="book">
+        <Image />
+        <Title />
+        <Author />
+    </article>;
 }
 
-ReactDom.render(<Greeting />, document.getElementById("root"));
+const Image = () => <img src="https://images-na.ssl-images-amazon.com/images/I/41ZN75rnLLL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg"/>
+
+const Title = () => <h1>Peril</h1>;
+const Author = () => <h4>Bob Woodward</h4>;
+
+ReactDom.render(<BookList />, document.getElementById("root"));

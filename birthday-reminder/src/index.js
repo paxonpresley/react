@@ -22,27 +22,23 @@ import './index.css'
 
 function BookList () {
     return (
-    <section className="booklist">
-        <Book />
-        <Book />
-        <Book />
-        <Book />
+    <section className="book">
         <Book />
     </section>
     );
 }
 
 function Book () {
-    return <article className="book">
-        <Image />
-        <Title />
-        <Author />
+    // refrence
+    const title = 'Peril';
+    const author = 'Bob Woodward';
+    img = 'https://images-na.ssl-images-amazon.com/images/I/41ZN75rnLLL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg';
+    // function
+    return <article>
+        <img src={img}/>
+        <h1>{title}</h1>
+        <h4>{author}</h4>
     </article>;
 }
-
-const Image = () => <img src="https://images-na.ssl-images-amazon.com/images/I/41ZN75rnLLL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg"/>
-
-const Title = () => <h1>Peril</h1>;
-const Author = () => <h4>Bob Woodward</h4>;
 
 ReactDom.render(<BookList />, document.getElementById("root"));

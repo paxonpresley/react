@@ -43,7 +43,11 @@ function BookList () {
         <Book 
         img={firstBook.img}
         title={firstBook.title}
-        author={firstBook.author} />
+        author={firstBook.author} 
+        >
+            <p>lorem ipsum bitch</p>
+        </Book>
+        
         <Book 
         img={secondBook.img}
         title={secondBook.title}
@@ -52,13 +56,15 @@ function BookList () {
     );
 }
 
-function Book ({img, title, author}) {
+// instead of props use {img, title, author, children}
+function Book (props) {
     // console.log(props);
-    // const {img, title, author} = props;
+    const {img, title, author, children} = props;
     return <article>
         <img src={img} alt="" />
         <h1>{title}</h1>
         <h4>{author}</h4>
+        {children}
     </article>;
 }
 

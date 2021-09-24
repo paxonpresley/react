@@ -20,12 +20,13 @@ import './index.css'
 //     </div>
 // 
 
-const firstBook = {
+const books = {
     img: 'https://images-na.ssl-images-amazon.com/images/I/41ZN75rnLLL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg',
     title: 'Peril',
     author: 'Bob Woodward'
 }
-const secondBook = {
+
+{
     img: 'https://m.media-amazon.com/images/I/51YAf2LzdwL.jpg',
     title: 'Based on a True Story: Not a Memoir',
     author: 'Norm Macdonald'
@@ -39,19 +40,7 @@ const secondBook = {
 function BookList () {
     return (
     <section className="book">
-        {/* how to display props */}
-        <Book 
-        img={firstBook.img}
-        title={firstBook.title}
-        author={firstBook.author} 
-        >
-            <p>lorem ipsum bitch</p>
-        </Book>
         
-        <Book 
-        img={secondBook.img}
-        title={secondBook.title}
-        author={secondBook.author} />
     </section>
     );
 }

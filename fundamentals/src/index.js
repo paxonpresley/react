@@ -20,27 +20,36 @@ import './index.css'
 //     </div>
 // 
 
-const books = {
-    img: 'https://images-na.ssl-images-amazon.com/images/I/41ZN75rnLLL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg',
-    title: 'Peril',
-    author: 'Bob Woodward'
-}
+const books = [
 
-{
-    img: 'https://m.media-amazon.com/images/I/51YAf2LzdwL.jpg',
-    title: 'Based on a True Story: Not a Memoir',
-    author: 'Norm Macdonald'
-}
+    {
+        img: 'https://images-na.ssl-images-amazon.com/images/I/41ZN75rnLLL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg',
+        title: 'Peril',
+        author: 'Bob Woodward'
+    },
+
+    {
+        img: 'https://m.media-amazon.com/images/I/51YAf2LzdwL.jpg',
+        title: 'Based on a True Story: Not a Memoir',
+        author: 'Norm Macdonald'
+    },
+];
 
 // ! // my variables
 // const title = 'Peril';
 // const author = 'Bob Woodward';
 // const img = 'https://images-na.ssl-images-amazon.com/images/I/41ZN75rnLLL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg';
 
+const names = [ 'gabe', 'horhay', 'maggy' ];
+const newNames = names.map((name) => {
+    console.log(name);
+    return <h1>{name}</h1>;
+});
 function BookList () {
+    console.log(newNames);
     return (
     <section className="book">
-        
+        {newNames}
     </section>
     );
 }
@@ -48,12 +57,11 @@ function BookList () {
 // instead of props use {img, title, author, children}
 function Book (props) {
     // console.log(props);
-    const {img, title, author, children} = props;
+    const {img, title, author} = props;
     return <article>
         <img src={img} alt="" />
         <h1>{title}</h1>
         <h4>{author}</h4>
-        {children}
     </article>;
 }
 

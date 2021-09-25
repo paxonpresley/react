@@ -50,22 +50,23 @@ const books = [
 function BookList () {
     return (
     <section className="booklist">
-        {books.map((book) => {
-            return <Book key={book.id} book={...book}></Book>;
+        {books.map((book, index) => {
+            return <Book key={book.id} {...book}></Book>;
         })}
     </section>
     );
 }
 
+// * book component
 // instead of props use {img, title, author, children}
-function Book (props) {
-    const {img, title, author} = props;
-    
+function Book ({img, title, author}) {
+    // const {img, title, author} = props;
+    // todo: attribute, eventHandler
     return <article className="book">
         <img src={img} alt="" />
         <h1>{title}</h1> 
         <h4>{author}</h4> 
     </article>;
-}
+} // * book component END
 
 ReactDom.render(<BookList />, document.getElementById("root"));

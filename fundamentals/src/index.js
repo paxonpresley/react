@@ -46,11 +46,9 @@ function BookList () {
         {books.map((book) => {
             const {img, title, author } = book;
             console.log(book);
-            return <div>
-                <h3>{title}</h3>
-                <p>{author}</p>
-                <br></br>
-            </div>;
+            return (
+                <Book img={img} title={title} author={author}></Book>
+            )
         })}
     </section>
     );

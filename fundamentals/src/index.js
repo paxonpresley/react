@@ -27,11 +27,15 @@ const books = [
         title: 'Peril',
         author: 'Bob Woodward'
     },
-
     {
         img: 'https://m.media-amazon.com/images/I/51YAf2LzdwL.jpg',
         title: 'Based on a True Story: Not a Memoir',
         author: 'Norm Macdonald'
+    },
+    {
+        img: 'https://m.media-amazon.com/images/I/51zjOxWs0GS.jpg',
+        title: 'Finding Martin Eden: Travels to find myself',
+        author: 'Marika'
     },
 ];
 
@@ -47,7 +51,7 @@ function BookList () {
             const {img, title, author } = book;
             console.log(book);
             return (
-                <Book img={img} title={title} author={author}></Book>
+                <Book book={book}></Book>
             )
         })}
     </section>
@@ -56,8 +60,8 @@ function BookList () {
 
 // instead of props use {img, title, author, children}
 function Book (props) {
-    // console.log(props);
-    const {img, title, author} = props;
+    console.log(props);
+    const {img, title, author} = props.book;
     return <article>
         <img src={img} alt="" />
         <h1>{title}</h1> 

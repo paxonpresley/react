@@ -64,13 +64,17 @@ function Book ({img, title, author}) {
     // todo: attribute, eventHandler
     // todo: onClich, onMouseOver
     const clickHandler = () => {
-        alert('hello you fucked up')
+        alert('hello you fucked up');
     }
+    const complexExample = (author) => {
+        console.log(author);
+    }    
     return <article className="book">
         <img src={img} alt="" />
         <h1>{title}</h1>
         <h4>{author}</h4>
-        <button type="button" onClick={clickHandler}></button> 
+        <button type="button" onClick={clickHandler}>1</button> 
+        <button type="button" onClick={complexExample(author)}>2</button>
     </article>;
 } // * book component END
 

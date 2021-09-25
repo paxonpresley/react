@@ -42,3 +42,8 @@ section.booklist {
     font-size: .75rem;
     margin-top: .25rem;
 }
+
+.book button {
+    height: 2rem;
+    width: 2rem;
+}

@@ -62,10 +62,15 @@ function BookList () {
 function Book ({img, title, author}) {
     // const {img, title, author} = props;
     // todo: attribute, eventHandler
+    // todo: onClich, onMouseOver
+    const clickHandler = () => {
+        alert('hello you fucked up')
+    }
     return <article className="book">
         <img src={img} alt="" />
-        <h1>{title}</h1> 
-        <h4>{author}</h4> 
+        <h1>{title}</h1>
+        <h4>{author}</h4>
+        <button type="button" onClick={clickHandler}></button> 
     </article>;
 } // * book component END
 

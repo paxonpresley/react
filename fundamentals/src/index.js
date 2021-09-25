@@ -40,16 +40,18 @@ const books = [
 // const author = 'Bob Woodward';
 // const img = 'https://images-na.ssl-images-amazon.com/images/I/41ZN75rnLLL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg';
 
-const names = [ 'gabe', 'horhay', 'maggy' ];
-const newNames = names.map((name) => {
-    console.log(name);
-    return <h1>{name}</h1>;
-});
 function BookList () {
-    console.log(newNames);
     return (
     <section className="book">
-        {newNames}
+        {books.map((book) => {
+            const {img, title, author } = book;
+            console.log(book);
+            return <div>
+                <h3>{title}</h3>
+                <p>{author}</p>
+                <br></br>
+            </div>;
+        })}
     </section>
     );
 }
@@ -60,8 +62,8 @@ function Book (props) {
     const {img, title, author} = props;
     return <article>
         <img src={img} alt="" />
-        <h1>{title}</h1>
-        <h4>{author}</h4>
+        <h1>{title}</h1> 
+        <h4>{author}</h4> 
     </article>;
 }
 

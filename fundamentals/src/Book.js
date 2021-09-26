@@ -1,9 +1,8 @@
 import React from 'react';
-import { Component } from "react";
 
 // * book component
 // instead of props use {img, title, author, children}
-export function Book ({img, title, author}) {
+function Book ({img, title, author}) {
     // const {img, title, author} = props;
     // todo: attribute, eventHandler
     // todo: onClich, onMouseOver
@@ -42,3 +41,5 @@ export function Book ({img, title, author}) {
     </article>;
 } 
 // * book component END
+
+export default Book

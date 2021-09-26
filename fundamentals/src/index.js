@@ -5,7 +5,7 @@ import './index.css';
 // import array:
 import { books } from './books';
 // import Book Component:
-import { Book } from './Book';
+import Book from './Book';
 
 // * display function
 function BookList () {

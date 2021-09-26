@@ -42,20 +42,21 @@ const books = [
     },
 ];
 
-// ! // my variables
-// const title = 'Peril';
-// const author = 'Bob Woodward';
-// const img = 'https://images-na.ssl-images-amazon.com/images/I/41ZN75rnLLL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg';
-
+// * display function
 function BookList () {
+    // returns each book
     return (
+    // returns one div
     <section className="booklist">
-        {books.map((book, index) => {
+        {/* books.map() means it will go through each item in the array also each item is called 'book' */}
+        {books.map((book) => {
+            {/* the arrow function returns component, gets the id from array and then spreads the props with rhe info from the array */}
             return <Book key={book.id} {...book}></Book>;
         })}
     </section>
     );
 }
+// * display function END
 
 // * book component
 // instead of props use {img, title, author, children}
@@ -63,19 +64,36 @@ function Book ({img, title, author}) {
     // const {img, title, author} = props;
     // todo: attribute, eventHandler
     // todo: onClich, onMouseOver
-    const clickHandler = () => {
+
+    // returns a string in the browser alert
+    const clickAlert = () => {
         alert('hello you fucked up');
     }
-    const complexExample = (author) => {
+
+    // returns the author in the console
+    const complexClickAlert = (author) => {
         console.log(author);
     }    
+
+    // returning the html -- it's wrapped in an article tag- 
     return <article className="book">
-        <img src={img} alt="" />
+        {/* plugs the img in the books array into an html attribute */}
+        <img src={img} alt="" /> 
+
+        {/* plugs the title string from the books array into an html attribute */}
         <h1>{title}</h1>
+
+        {/* plugs the author string from the books array into an html attribute */}
         <h4>{author}</h4>
-        <button type="button" onClick={clickHandler}>1</button> 
-        <button type="button" onClick={complexExample(author)}>2</button>
+
+        {/* calls back to the clickAlert function in order to actually return that alert via ' onClick '  -- same alert for every button */}
+        <button type="button" onClick={clickAlert}>1</button> 
+
+        {/* when a user clicks the arrow function will callback to the complexClickAlert and return the author in the console for that book only */}
+        <button type="button" onClick={() => complexClickAlert(author)}>2</button>
+
     </article>;
 } // * book component END
 
+// renders the components, compiles them, 
 ReactDom.render(<BookList />, document.getElementById("root"));

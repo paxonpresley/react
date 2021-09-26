@@ -78,12 +78,14 @@ function Book ({img, title, author}) {
     }    
 
     // returning the html -- it's wrapped in an article tag- 
-    return <article className="book">
+    return <article className="book" onMouseOver={() => {
+        console.log(title);
+    }}>
         {/* plugs the img in the books array into an html attribute */}
         <img src={img} alt="" /> 
 
         {/* plugs the title string from the books array into an html attribute */}
-        <h1>{title}</h1>
+        <h1 onClick={() => console.log(title)}>{title}</h1>
 
         {/* plugs the author string from the books array into an html attribute */}
         <h4>{author}</h4>

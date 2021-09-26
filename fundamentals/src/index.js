@@ -46,9 +46,9 @@ const books = [
 function BookList () {
     // returns each book
     return (
-    // returns one div
+    // component div
     <section className="booklist">
-        {/* books.map() means it will go through each item in the array also each item is called 'book' */}
+        {/* goes through each item in the array -- each item is called 'book' - */}
         {books.map((book) => {
             {/* the arrow function returns component, gets the id from array and then spreads the props with rhe info from the array */}
             return <Book key={book.id} {...book}></Book>;
@@ -66,7 +66,9 @@ function Book ({img, title, author}) {
     // todo: onClich, onMouseOver
 
     // returns a string in the browser alert
-    const clickAlert = () => {
+    const clickAlert = (e) => {
+        console.log(e);
+        console.log(e.target);
         alert('hello you fucked up');
     }
 
@@ -93,7 +95,8 @@ function Book ({img, title, author}) {
         <button type="button" onClick={() => complexClickAlert(author)}>2</button>
 
     </article>;
-} // * book component END
+} 
+// * book component END
 
 // renders the components, compiles them, 
 ReactDom.render(<BookList />, document.getElementById("root"));
